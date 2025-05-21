@@ -3,6 +3,12 @@ const app = express();
 
 const bookRoute = require("./router/bookRoute")
 
+const cors = require("cors")       //yo cors lai bolako
+
+app.use(cors({
+    origin:"http://localhost:5173/"
+}))
+
 
 app.use(express.json())            //yo logic hald n bhujne bhayer rakhnaii parxa
 
