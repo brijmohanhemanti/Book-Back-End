@@ -9,11 +9,11 @@ exports.getbook = async(req,res)=>{
 }
 
 exports.addbook =async(req,res)=>{
-    const{bookName,bookPrize,bookauthor}=req.body
+    const{bookName,bookPrice,bookAuthor}=req.body
     await books.create({
         bookName:bookName,
-        bookPrice:bookPrize,          //column name : value
-        bookAuthor:bookauthor
+        bookPrice:bookPrice,          //column name : value
+        bookAuthor:bookAuthor
     })
     res.json({
         message : "Book added successfully"
@@ -37,11 +37,11 @@ exports.deletebook=async(req,res)=>{
 
 exports.editBooks=async(req,res)=>{
     const id = req.params.id
-    const {bookName, bookauthor, bookPrize,} =req.body
+    const {bookName, bookAuthor, bookPrice} =req.body
     books.update({
-        bookName:bookName,
-        bookPrice:bookPrize,          //column name : value
-        bookAuthor:bookauthor
+        bookName,
+        bookPrice,          //column name : value
+        bookAuthor,
     },{
         where:{
             id

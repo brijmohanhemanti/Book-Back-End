@@ -1,12 +1,13 @@
 const express = require(`express`);
 const app = express();
-
+const cors = require("cors")       //yo cors lai bolako
 const bookRoute = require("./router/bookRoute")
 
-const cors = require("cors")       //yo cors lai bolako
+
+
 
 app.use(cors({
-    origin:"http://localhost:5173/"
+    origin : "*"
 }))
 
 
